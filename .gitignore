@@ -22,6 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
+.env
 # Lovable Cloud injects publishable Vite backend variables here for this classic Vite app.
 # Do not add private server-only secrets to .env.
