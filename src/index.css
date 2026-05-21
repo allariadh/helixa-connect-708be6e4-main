@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Helixa — iOS Apple Light Theme */
+    /* App background #f9f9ff */
+    --background: 240 100% 99%;
+    --foreground: 218 17% 12%;            /* #181c23 */
+
+    /* AI section purple accents (additive, AI-only token) */
+    --helixa-purple: 262 83% 58%;
+    --helixa-purple-soft: 262 83% 95%;
+    --ai-accent: 290 100% 47%;        /* #CF00EE */
+    --ai-accent-soft: 290 100% 96%;
+    --ai-accent-fg: 0 0% 100%;
+
+    --card: 0 0% 100%;                    /* #ffffff */
+    --card-foreground: 218 17% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 17% 12%;
+
+    /* Primary action #0058bc */
+    --primary: 211 100% 37%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary container #ecedf9 */
+    --secondary: 234 47% 95%;
+    --secondary-foreground: 218 17% 12%;
+
+    --muted: 234 47% 95%;
+    --muted-foreground: 222 9% 48%;       /* #717786 */
+
+    /* Accent reuses primary blue (no magenta) */
+    --accent: 211 100% 37%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Alert / Critical #ba1a1a */
+    --destructive: 0 76% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 228 22% 80%;                /* #c1c6d7 */
+    --input: 234 88% 97%;                 /* #f1f3fe */
+    --ring: 211 100% 37%;
+
+    --radius: 1rem;
+
+    /* Custom Helixa light tokens */
+    --helixa-black: 218 17% 12%;
+    --helixa-dark: 234 47% 95%;
+    --helixa-charcoal: 0 0% 100%;
+    --helixa-gray: 234 47% 95%;
+    --helixa-cyan: 211 100% 37%;
+    --helixa-magenta: 211 100% 37%;
+    --helixa-text-primary: 218 17% 12%;
+    --helixa-text-secondary: 222 12% 30%; /* #414755 */
+    --helixa-text-tertiary: 222 9% 48%;
+
+    /* Glassmorphism (light frosted) */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 0 0% 0% / 0.05;
+    --glass-blur: 20px;
+
+    /* Gradients flattened to primary */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 37%), hsl(211 100% 37%));
+    --gradient-cyan: linear-gradient(135deg, hsl(211 100% 37%), hsl(211 100% 37%));
+    --gradient-magenta: linear-gradient(135deg, hsl(211 100% 37%), hsl(211 100% 37%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 100% 99%));
+
+    /* Glows neutralized */
+    --glow-cyan: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --glow-magenta: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --glow-intense: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 218 17% 12%;
+    --sidebar-primary: 211 100% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 234 47% 95%;
+    --sidebar-accent-foreground: 218 17% 12%;
+    --sidebar-border: 228 22% 80%;
+    --sidebar-ring: 211 100% 37%;
+
+    /* Tactical tokens remapped to light */
+    --tactical-charcoal: 0 0% 100%;
+    --tactical-black: 240 100% 99%;
+    --tactical-signal: 0 76% 42%;         /* #ba1a1a */
+    --tactical-steel: 211 100% 37%;       /* #0058bc */
+    --tactical-text: 218 17% 12%;
+    --tactical-border: 228 22% 80%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 0 0% 96%;
+    --card: 222 36% 11%;
+    --card-foreground: 0 0% 96%;
+    --popover: 222 36% 11%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 211 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 31% 15%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 222 31% 15%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 211 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 76% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 24% 24%;
+    --input: 222 31% 15%;
+    --ring: 211 100% 55%;
+
+    --helixa-black: 0 0% 96%;
+    --helixa-dark: 222 31% 15%;
+    --helixa-charcoal: 222 36% 11%;
+    --helixa-gray: 222 31% 15%;
+    --helixa-text-primary: 0 0% 96%;
+    --helixa-text-secondary: 220 12% 78%;
+    --helixa-text-tertiary: 220 9% 65%;
+
+    --glass-bg: 222 36% 11% / 0.78;
+    --glass-border: 0 0% 100% / 0.10;
+    --gradient-dark: linear-gradient(180deg, hsl(222 47% 7%), hsl(222 36% 11%));
+
+    --tactical-charcoal: 222 36% 11%;
+    --tactical-black: 222 47% 7%;
+    --tactical-signal: 0 76% 52%;
+    --tactical-steel: 211 100% 55%;
+    --tactical-text: 0 0% 96%;
+    --tactical-border: 220 13% 22%;
+
+    --sidebar-background: 222 36% 11%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-border: 222 24% 24%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Frosted Glass Card (Apple Light) */
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .glass-card {
+    background-color: hsl(var(--card) / 0.78);
+    border-color: hsl(var(--border) / 0.85);
+    box-shadow: 0 14px 40px hsl(222 47% 3% / 0.35);
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: hsl(var(--input)) !important;
+    color: hsl(var(--foreground));
+  }
+
+  /* Glow utilities neutralized to soft elevation */
+  .glow-cyan,
+  .glow-magenta,
+  .glow-intense {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .gradient-text {
+    color: hsl(var(--primary));
+    background: none;
+  }
+
+  .gradient-bg,
+  .gradient-cyan-bg {
+    background: hsl(var(--primary));
+  }
+
+  .animate-glow {
+    animation: pulse-soft 2.4s ease-in-out infinite;
+  }
+
+  /* Clean AI orb — no neon */
+  .crystal-orb {
+    @apply relative;
+    background: hsl(234 47% 95%);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 88, 188, 0.10);
+  }
+
+  .crystal-orb::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: radial-gradient(circle at 30% 30%, hsl(211 100% 37% / 0.18), transparent 60%);
+  }
+
+  /* Particles disabled */
+  .particle {
+    display: none !important;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+  .custom-scrollbar::-webkit-scrollbar-track { @apply bg-muted rounded-full; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-primary/40 rounded-full; }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover { @apply bg-primary/60; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 4px 20px rgba(0, 88, 188, 0.10); }
+  50% { box-shadow: 0 6px 28px rgba(0, 88, 188, 0.18); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+  50% { box-shadow: 0 6px 24px rgba(0, 88, 188, 0.12); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.5; }
+  50% { transform: scale(1); opacity: 0.2; }
+  100% { transform: scale(0.85); opacity: 0.5; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ring-expand {
+  0%   { transform: translate(-50%, -50%) scale(0.86); opacity: 0.65; }
+  100% { transform: translate(-50%, -50%) scale(1.28); opacity: 0; }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+
+.helixa-orb-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%) scale(0.86);
+  animation: ring-expand 2.8s ease-out infinite;
+  pointer-events: none;
+}
